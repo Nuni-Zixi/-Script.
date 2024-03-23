@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install necessary packages
-apt install -y masscan
+apt install -y masscan && cd masscan
 apt install curl -y
 apt-get install zmap
 apt-get install libpcap-dev
