@@ -8,7 +8,7 @@ apt-get install libpcap-dev
 # Run masscan
 masscan 0.0.0.0/0 -p54321 --banners --exclude 255.255.255.255 -oJ scan.json --rate 100000
 
-#Press Ctrl+C to stop scanning and start blasting
+# Press Ctrl+C to stop scanning and start blasting
 
 # Process scan results
 for ip_ad in $(sed -nE  's/.*"ip": "([^"]+)".*/\1/p' scan.json); do
@@ -21,5 +21,5 @@ for ip_ad in $(sed -nE  's/.*"ip": "([^"]+)".*/\1/p' scan.json); do
         fi
 done;
 
-#Script execution completed
+# Script execution completed
 echo "运行完成，请查看 week.log 和 all.log 以获取结果"
