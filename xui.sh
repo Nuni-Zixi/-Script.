@@ -1,12 +1,14 @@
 #!/bin/bash
 
 # Install necessary packages
-apt install -y masscan && cd masscan
-apt install curl -y
-apt-get install libpcap-dev
+echo "正在开始安装依赖...如未找到软件包,请update"
+apt-get install -y masscan curl zmap libpcap-dev
+echo "已安装所有依赖 & 开始扫描"
+
+cd masscan
 
 # Run masscan
-masscan 0.0.0.0/0 -p54321 --banners --exclude 255.255.255.255 -oJ scan.json --rate 100000
+masscan 93.179.124.0/24 -p54321 --banners --exclude 255.255.255.255 -oJ scan.json --rate 100000
 
 # Press Ctrl+C to stop scanning and start blasting
 
